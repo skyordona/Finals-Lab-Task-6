@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finals Lab Task 6 - MongoDBCRUD</title>
+    <style>
+        /* Street Fighter Theme */
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Press Start 2P', cursive;
+            margin: 0;
+            padding: 20px;
+            background-image: url('https://cdn.steamstatic.com/steamcommunity/public/images/items/1364780/d8a11446810c7ebce3ca74c5e7e2a2ce689f2f8c.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeOut 2s forwards;
+            animation-delay: 3s;
+        }
+
+        .loading-text {
+            color: #ff0;
+            font-size: 24px;
+            animation: blink 0.5s infinite;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 5s;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .download-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        h1, h2 {
+            color: #ff0;
+            text-shadow: 3px 3px #f00;
+            text-transform: uppercase;
+            text-align: center;
+            border-bottom: 2px solid #ff0;
+            padding-bottom: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            border: 3px solid #ff0;
+            margin: 10px 0;
+            box-shadow: 0 0 10px #f00;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #ff0;
+            color: #000;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .download-btn:hover {
+            background: #f00;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        ol, ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #ff0;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 0, 0, 0.3);
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; visibility: hidden; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    </style>
+</style>
+</head>
+<body>
+
+<!-- Optional Loading Screen -->
+<div class="loading-screen">
+    <div class="loading-text">LOADING...</div>
+</div>
+
+<!-- Main Content -->
+<div class="container">
+    <h1>Finals Lab Task 6 - MongoDBCRUD</h1>
+
+    <!-- Download Button -->
+    <div class="download-container">
+        <a href="https://github.com/user-attachments/files/20260641/Finals.Lab.Task.6.-.Ordona.docx" class="download-btn" target="_blank">Download Full Documentation</a>
+    </div>
+
+    <!-- Step-by-Step Instructions -->
+    <h2>Step-by-Step Process</h2>
+    <ol>
+        <li>
+            <strong>Create a Database</strong>
+            <ul>
+                <li>Start your MongoDB shell or GUI tool.</li>
+                <li>Use <code>use yourDatabaseName</code> to create or switch to your database.</li>
+                <li>Confirm the active database.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Insert Documents</strong>
+            <ul>
+                <li>Create a collection, e.g., <code>db.collectionName.insertMany([{...}, {...}])</code>.</li>
+                <li>Insert multiple documents with fields like name, age, address, etc.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Find Documents</strong>
+            <ul>
+                <li>Display all documents: <code>db.collectionName.find()</code></li>
+                <li>Find specific documents using filters: <code>db.collectionName.find({name: 'John'})</code></li>
+            </ul>
+        </li>
+        <li>
+            <strong>Update Documents</strong>
+            <ul>
+                <li>Locate a document with a filter, e.g., <code>db.collectionName.updateOne({name: 'John'}, {$set: {age:30}})</code></li>
+                <li>Verify the update with a find command.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Search Documents</strong>
+            <ul>
+                <li>Use queries with conditions, e.g., <code>db.collectionName.find({age: {$gt:25}})</code></li>
+                <li>Review the matched documents.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Delete Documents</strong>
+            <ul>
+                <li>Remove documents with <code>db.collectionName.deleteOne({name: 'John'})</code></li>
+                <li>Verify deletion with a find command.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <!-- Images and Output Screenshots -->
+    <h2>Screenshots of Commands and Outputs</h2>
+
+    <h3>1. Create a Database</h3>
+    <img src="https://github.com/user-attachments/assets/30e677d1-bf13-42ef-888c-16a9ac2e6d23" alt="Create Database" />
+
+    <h3>2. Insert Documents</h3>
+    <img src="https://github.com/user-attachments/assets/b7f47b4a-9879-4641-bf42-c9339c17648a" alt="Insert Documents" />
+    <img src="https://github.com/user-attachments/assets/a88fff93-1de2-40a5-ae45-452a50b9837c" alt="Insert Success" />
+    <img src="https://github.com/user-attachments/assets/88fee9ac-eac0-45fa-925d-be16456021d0"  />
+    <img src="https://github.com/user-attachments/assets/668bb0c7-7f38-4171-9d1f-6a295cba672f"  />
+    <img src="https://github.com/user-attachments/assets/0f2516a3-8c27-4919-9215-75ac0d3e64e5"  />
+    <img src="https://github.com/user-attachments/assets/0344c22f-5748-4473-9ed0-8fceadbde888"  />
+    <img src="https://github.com/user-attachments/assets/2d48e327-e60a-4c94-86fb-7a0692717106"  />
+    <img src="https://github.com/user-attachments/assets/cd6b4bb2-c908-47d3-8f80-5856b6ddb582"  />
+    
+    <h3>3. Query / Find Documents</h3>
+    <img src="https://github.com/user-attachments/assets/a79aed6d-59de-4e2e-b0a0-b9daf1222499"  />
+    <img src="https://github.com/user-attachments/assets/ff81d5d6-5fe4-4f88-9f2b-2bafddc336cb"  />
+    <img src="https://github.com/user-attachments/assets/f9dc9fc1-6cb8-41be-b844-6e2f9c106e81"  />
+    <img src="https://github.com/user-attachments/assets/79306700-a845-41f7-9d7e-764a3cb1e31d"  />
+    <img src="https://github.com/user-attachments/assets/c49fe89f-d470-416d-aa76-6c6af13b37b2"  />
+    <img src="https://github.com/user-attachments/assets/de0714ac-74cf-4c68-8f3b-f645ec4169c9"  />
+    <img src="https://github.com/user-attachments/assets/cae567d5-fdc6-4113-a6fa-672bf58dc766"  />
+    
+    <h3>4. Update Documents</h3>
+    <img src="https://github.com/user-attachments/assets/e06a5f5f-5401-4ddb-9c4e-8df1708c16cc"  />
+    <img src="https://github.com/user-attachments/assets/62438edd-08d2-4ee1-bb0b-9e1e81421277"  />
+    <img src="https://github.com/user-attachments/assets/fd426882-c0eb-425e-afef-80cf3f47ab6c"  />
+    
+    <h3>5. Text Search</h3>
+    <img src="https://github.com/user-attachments/assets/258b4fcb-beb9-4990-996b-2298d313beb2"  />
+    <img src="https://github.com/user-attachments/assets/024828fe-b864-4d54-bd72-d9388a9382ba"  />
+    <img src="https://github.com/user-attachments/assets/19ba36e2-743a-435f-a112-fbea330f1e59"  />
+    <img src="https://github.com/user-attachments/assets/0c4c85ef-7933-40ac-938a-c11e6bd593ec"  />
+    <img src="https://github.com/user-attachments/assets/a438e491-0b78-4d60-a192-0fe3a96ab6b8"  />
+    
+    <h3>6. Delete Documents</h3>
+    <img src="https://github.com/user-attachments/assets/92e2cbd5-d6c7-4a5a-81be-7dff9ebe7699"  />
+    <img src="https://github.com/user-attachments/assets/ca2bd9f5-f554-4ee6-9a9c-1cbd2572dda5"  />
+</div>
+
+    <!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .click-effect {
+            position: fixed;
+            pointer-events: none;
+            font-family: 'Comic Sans MS', cursive;
+            font-weight: bold;
+            font-size: 2.5em;
+            user-select: none;
+            animation: popAndFade 0.5s ease-out forwards;
+            z-index: 9999;
+            text-transform: uppercase;
+            filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
+        }
+
+        .effect-pow { color: #FF4136; }
+        .effect-bam { color: #0074D9; }
+        .effect-smash { color: #FFDC00; }
+        .effect-zap { color: #FF851B; }
+        .effect-zonk { color: #B10DC9; }
+        .effect-boom { color: #FF4136; }
+
+        @keyframes popAndFade {
+            0% {
+                transform: scale(0.5) rotate(-5deg);
+                opacity: 0;
+            }
+            25% {
+                transform: scale(1.2) rotate(5deg);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1) rotate(-2deg);
+            }
+            100% {
+                transform: scale(1.1) rotate(0);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.addEventListener('click', function(e) {
+            const effects = [
+                {text: 'POW!', class: 'effect-pow'},
+                {text: 'BAM!', class: 'effect-bam'},
+                {text: 'SMASH!', class: 'effect-smash'},
+                {text: 'ZAP!', class: 'effect-zap'},
+                {text: 'ZONK!', class: 'effect-zonk'},
+                {text: 'BOOM!', class: 'effect-boom'}
+            ];
+            
+            const randomEffect = effects[Math.floor(Math.random() * effects.length)];
+            const effect = document.createElement('div');
+            effect.className = `click-effect ${randomEffect.class}`;
+            effect.textContent = randomEffect.text;
+            
+            // Random slight offset for more dynamic feel
+            const offsetX = (Math.random() - 0.5) * 20;
+            const offsetY = (Math.random() - 0.5) * 20;
+            
+            effect.style.left = (e.clientX - 50 + offsetX) + 'px';
+            effect.style.top = (e.clientY - 50 + offsetY) + 'px';
+            
+            document.body.appendChild(effect);
+            
+            effect.addEventListener('animationend', function() {
+                effect.remove();
+            });
+        });
+    </script>
+</body>
+</html>
