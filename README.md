@@ -1,4 +1,4 @@
-# [Finals Lab Task 6 - MongoDBCRUD]()
+# [Finals Lab Task 6 - MongoDBCRUD](https://github.com/user-attachments/files/20260641/Finals.Lab.Task.6.-.Ordona.docx)
 - This task focuses on performing fundamental MongoDB operations such as creating a database, inserting documents, and executing find, update, search, and delete actions within a collection.
 
 ## Step-by-Step Process:
