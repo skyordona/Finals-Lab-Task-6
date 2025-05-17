@@ -1,4 +1,4 @@
-# [Finals Lab Task 6 - MongoDBCRUD](https://github.com/user-attachments/files/20260641/Finals.Lab.Task.6.-.Ordona.docx)
+# [Finals Lab Task 6 - MongoDBCRUD](https://github.com/user-attachments/files/20265468/Finals.Lab.Task.6.-.Ordona.docx)
 - This task focuses on performing fundamental MongoDB operations such as creating a database, inserting documents, and executing find, update, search, and delete actions within a collection.
 
 ## Step-by-Step Process:
@@ -98,3 +98,43 @@
 - ![Image](https://github.com/user-attachments/assets/ca2bd9f5-f554-4ee6-9a9c-1cbd2572dda5)
 
 # Relationships
+### Insert the following documents into a `users` collection
+- ![Image](https://github.com/user-attachments/assets/eacae736-f8b3-4f57-b975-bac0f6671615)
+- ![Image](https://github.com/user-attachments/assets/626e6d1f-0e0e-41c9-9e65-e87b25193307)
+  
+### Insert the following documents into a `posts` collection
+- ![Image](https://github.com/user-attachments/assets/46d173c2-fefd-406e-89d6-0374df2a0ad3)
+- ![Image](https://github.com/user-attachments/assets/fde94752-cf2b-4cdd-884a-621fed8b1236)
+- ![Image](https://github.com/user-attachments/assets/7663050e-9259-4a53-b3ae-5d43dba2fa01)
+- ![Image](https://github.com/user-attachments/assets/f855c4d7-dc90-4c76-a7f7-ab792cc87b2c)
+- ![Image](https://github.com/user-attachments/assets/59f7aa14-bfcf-49af-a813-1e080e418068)
+- ![Image](https://github.com/user-attachments/assets/693ce191-d578-405d-96a3-3151258ab0a6)
+
+
+### Insert the following documents into a `comments` collection
+- ![Image](https://github.com/user-attachments/assets/d4f95bcc-9fa5-4c2b-baac-6192e1fd2043)
+- ![Image](https://github.com/user-attachments/assets/2db8d931-2ee2-43a4-8aa3-39f8de46ad6c)
+- ![Image](https://github.com/user-attachments/assets/34119150-96f1-461c-8a4f-802e38323f95)
+- ![Image](https://github.com/user-attachments/assets/c1b11867-f217-4cdd-990f-5562b8cf594b)
+- ![Image](https://github.com/user-attachments/assets/051bdbb0-2880-4e1b-a6aa-5e11112b8ff9)
+
+## Querying Related Collections
+1. Find all users  
+- ![Image](https://github.com/user-attachments/assets/836770a5-eedb-4260-afa7-b2e9d981ffb1)
+2. Find all posts  
+- ![Image](https://github.com/user-attachments/assets/00cc25e5-707b-49cc-87d1-dea4320d8345)
+3. Find all posts that were authored by **GoodGuyGreg**  
+- ![Image](https://github.com/user-attachments/assets/15336a78-7489-4138-a44d-fc372e308f50)
+4. Find all posts that were authored by **ScumbagSteve**  
+- ![Image](https://github.com/user-attachments/assets/cc097bf5-db80-43c1-895f-0ff22b44e5bb)
+5. Find all comments  
+- ![Image](https://github.com/user-attachments/assets/14a40fba-b62d-440c-92eb-0dcece94bffb)
+6. Find all comments that were authored by **GoodGuyGreg**  
+- ![Image](https://github.com/user-attachments/assets/b5b9d226-fece-4c34-812f-5f742de22e5b)
+7. Find all comments that were authored by **ScumbagSteve**  
+- ![Image](https://github.com/user-attachments/assets/9646a532-cff1-4064-8350-258b42fe5123)
+8. Find all comments belonging to the post **"Reports a bug in your code"**
+- ![Image](https://github.com/user-attachments/assets/8d11cbf4-3512-4a52-a80c-8d5ed891c70a)
+
+## Entity-Relationship (ER) Diagram
+- ![Image](https://github.com/user-attachments/assets/b8cb8b5a-1515-4c0d-a529-d764bcde9e46)
