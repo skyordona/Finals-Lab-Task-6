@@ -96,3 +96,5 @@
 - ![Image](https://github.com/user-attachments/assets/92e2cbd5-d6c7-4a5a-81be-7dff9ebe7699)
 ### 2.)
 - ![Image](https://github.com/user-attachments/assets/ca2bd9f5-f554-4ee6-9a9c-1cbd2572dda5)
+
+# Relationships
